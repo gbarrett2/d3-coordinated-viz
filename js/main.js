@@ -255,7 +255,7 @@ function setChart(csvData, colorScale){
              return i * fraction + (fraction - 1) / 2;
          })
          .attr("y", function(d){
-             return chartHeight - yScale(parseFloat(d[expressed])) + 15;
+             return chartHeight - yScale(parseFloat(d[expressed])) + 170;
          })
          .text(function(d){
              return d[expressed];
