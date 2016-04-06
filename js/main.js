@@ -52,9 +52,10 @@ function setMap(){
       var colorScale = makeColorScale(csvData);
 
       //add enumeration units to the map
-      setEnumerationUnits(unitedStates, map, path,colorScale);
+      setEnumerationUnits(unitedStates, map, path, colorScale);
 
-      joinData(unitedStates, csvData);
+      //joinData(unitedStates, csvData);
+
       //add coordinated visualization to the map
       setChart(csvData, colorScale);
 
@@ -116,7 +117,7 @@ function setGraticule(map, path){
         for (var i=0; i<csvData.length; i++){
 
             var csvRegion = csvData[i]; //the current region
-            var csvKey = csvRegion.State; //the CSV primary key
+            var csvKey = csvRegion.state; //the CSV primary key
 
             //loop through geojson regions to find correct region
             for (var a=0; a<unitedStates.length; a++){
@@ -132,7 +133,6 @@ function setGraticule(map, path){
                                       geojsonProps[attr] = val; //assign attribute and value to geojson properties
 
  });
-
                     // //assign all attributes and values
                     // attrArray.forEach(function(attr){
                     //   if(attr == "State"){
@@ -158,7 +158,7 @@ function setGraticule(map, path){
        .enter()
        .append("path")
        .attr("class", function(d){
-           return "regions " + d.properties.State;
+           return "regions " + d.properties.state;
        })
        .attr("d", path)
        .style("fill", function(d){

@@ -1,4 +1,4 @@
-State,"VEP Total Ballots Counted","VEP Highest Office","VAP Highest Office","% Non-citizen","% in labor force","percent below poverty level",Latitude,Longitude,"Accuracy Score","Accuracy Type",Number,Street,City,State,County,Zip,Country
+state,"VEP Total Ballots Counted","VEP Highest Office","VAP Highest Office","% Non-citizen","% in labor force","percent below poverty level",Latitude,Longitude,"Accuracy Score","Accuracy Type",Number,Street,City,State,County,Zip,Country
 Alabama,61.00%,60.80%,58.40%,2.20%,61.50%,12.00%,32.739632,-86.843459,1,state,,,,AL,,,US
 Alaska,68.30%,68.00%,64.30%,3.70%,73.60%,5.70%,63.346191,-152.837069,1,state,,,,AK,,,US
 Arizona,57.40%,56.70%,49.10%,11.60%,63.60%,10.30%,34.203936,-111.606357,1,state,,,,AZ,,,US
