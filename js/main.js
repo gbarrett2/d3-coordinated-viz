@@ -340,31 +340,50 @@ function setChart(csvData, colorScale){
 
           //recolor enumeration units
           var regions = d3.selectAll(".regions")
+              .transition()
+              .duration(1000)
               .style("fill", function(d){
                   return choropleth(d.properties, colorScale)
               });
 
-          //re-sort, resize, and recolor bars
-          var bars = d3.selectAll(".bar")
-              //re-sort bars
-              .sort(function(a, b){
-                  return b[expressed] - a[expressed];
-              })
-              .attr("x", function(d, i){
-                  return i * (chartInnerWidth / csvData.length) + leftPadding;
-              })
-              //resize bars
-              .attr("height", function(d, i){
-                  return 463 - yScale(parseFloat(d[expressed]));
-              })
-              .attr("y", function(d, i){
-                  return yScale(parseFloat(d[expressed])) + topBottomPadding;
-              })
-              //recolor bars
-              .style("fill", function(d){
-                  return choropleth(d, colorScale);
-              });
-              updateChart(bars, csvData.length, colorScale);
+        //re-sort, resize, and recolor bars
+      var bars = d3.selectAll(".bar")
+      //re-sort bars
+       .sort(function(a, b){
+           return b[expressed] - a[expressed];
+       })
+       .transition() //add animation
+       .delay(function(d, i){
+           return i * 20
+       })
+       .duration(500);
+
+   updateChart(bars, csvData.length, colorScale);
+              // //re-sort bars
+              // .sort(function(a, b){
+              //     return b[expressed] - a[expressed];
+              // })
+              // // .transition() //add animation
+              // // .delay(function(d, i){
+              // //     return i * 20
+              // // })
+              // // .duration(500);
+              //
+              // //resize bars
+              // .attr("x", function(d, i){
+              //     return i * (chartInnerWidth / csvData.length) + leftPadding;
+              // })
+              // .attr("height", function(d, i){
+              //     return 463 - yScale(parseFloat(d[expressed]));
+              // })
+              // .attr("y", function(d, i){
+              //     return yScale(parseFloat(d[expressed])) + topBottomPadding;
+              // })
+              // //recolor bars
+              // .style("fill", function(d){
+              //     return choropleth(d, colorScale);
+              // });
+              // updateChart(bars, csvData.length, colorScale);
       };
       //function to position, size, and color bars in chart
       function updateChart(bars, n, colorScale){
