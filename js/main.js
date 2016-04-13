@@ -156,7 +156,7 @@ function setGraticule(map, path){
         for (var i=0; i<csvData.length; i++){
 
             var csvRegion = csvData[i]; //the current region
-            var csvKey = csvRegion.state; //the CSV primary key
+            var csvKey = csvRegion.name; //the CSV primary key
 
             //loop through geojson regions to find correct region
             for (var a=0; a<unitedStates.length; a++){
@@ -184,7 +184,7 @@ function setGraticule(map, path){
        .enter()
        .append("path")
        .attr("class", function(d){
-           return "regions " + d.properties.state;
+           return "regions " + d.properties.name;
        })
        .attr("d", path)
        .style("fill", function(d){
@@ -238,7 +238,7 @@ function setChart(csvData, colorScale){
          return b[expressed]-a[expressed]
         })
       .attr("class", function(d){
-            return "bar " + d.state;
+            return "bar " + d.name;
         })
         .attr("width", chartInnerWidth / csvData.length - 1)
         .on("mouseover", highlight)
@@ -361,7 +361,7 @@ updateChart(bars, csvData.length, colorScale);
 
     function highlight(props){
         //change stroke
-        var selected = d3.selectAll("." + props.state)
+        var selected = d3.selectAll("." + props.name)
             .style({
                 "stroke": "grey",
                 "stroke-width": "2"
@@ -380,7 +380,7 @@ function setLabel(props){
 		.append("div")
 		.attr({
 			"class": "infolabel",
-			"id": props.state + "_label"
+			"id": props.name + "_label"
 		})
 		.html(labelAttribute);
 
@@ -392,7 +392,7 @@ function setLabel(props){
 
     //function to reset the element style on mouseout
 function dehighlight(props){
-    var selected = d3.selectAll("." + props.state)
+    var selected = d3.selectAll("." + props.name)
         .style({
             "stroke": function(){
                 return getStyle(this, "stroke")
