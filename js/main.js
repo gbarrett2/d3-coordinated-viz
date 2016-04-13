@@ -354,7 +354,7 @@ updateChart(bars, csvData.length, colorScale);
               });
               //at the bottom of updateChart()...add text to chart title
               var chartTitle = d3.select(".chartTitle")
-                .text("Number of Variable " + expressed + " in each region");
+                .text("Percentage of Variable " + expressed + " in Each State");
               };
 
     function highlight(props){
