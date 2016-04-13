@@ -5,6 +5,28 @@
 var attrArray = ["VEP Highest Office","VAP Highest Office","% Non-citizen","% in labor force","Percent below poverty level"]; //list of attributes
 var expressed = attrArray[0]; //initial attribute
 
+
+
+// // Create global title for each variable
+// var title_VEP = "VEP highest office ";
+// var title_VAP = "VAP highest office";
+// var title_noncitizens = "percentage of noncitizens";
+// var title_laborforce = "percent in labor force";
+// var title_povertyline = "percent below the poverty line"
+//
+// //Create the description container
+// var descriptionDiv;
+//
+// // Create global descriptions for each variable
+// var desc_VEP = "The VEP highest office is the percentage of the voting-eligible population that voted for highest office.  VEP excludes people who are ineligible to vote.  People who are ineligible to vote are non-citizens, felons and mentally incapacitated persons. The data also does not include people who are in the military or people who live overseas.<sup>[2]</sup>"
+// var desc_VAP = "The VAP highest office is the percentage of the voting-age population that voted. The voting-age population consists of people who are 18 years or older according to the Bureau of the Census.<sup>[1]</sup>";
+// var desc_noncitizens = "The percentage of noncitizens is the percentage of people in each state who are not citizens.<sup>[2]</sup>";
+// var desc_laborforce = "The percent in labor force refers to the percentage of people who work in each state.<sup>[2]</sup>";
+// var desc_povertyline = "The percent below the poverty line represents the population below the poverty line in each state in 2008.<sup>[2]</sup>"
+
+
+
+
 //chart frame dimensions
 var chartWidth = window.innerWidth * 0.425,
     chartHeight = 473,
