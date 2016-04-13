@@ -49,9 +49,11 @@ background-color: blue;
 
 .chart {
     background-color: white;
-    border: medium solid white;
+    border: thin solid white;
     float: right;
-    margin: -970px 20px 0 0;
+    margin: -970px 20px 0 50px;
+    right: 20px;
+    left: 100px;
 }
 
 
@@ -68,7 +70,7 @@ background-color: blue;
 .chartFrame {
     fill: none;
     stroke: white;
-    stroke-width: 3px;
+    stroke-width: 1px;
     shape-rendering: crispEdges;
 }
 
@@ -82,8 +84,8 @@ background-color: blue;
 
 .axis text {
     font-family:  Tahoma, Geneva, sans-serif;
-    font-size: 0.8em;
-    fill: #999;
+    font-size: 0.5em;
+    fill: black;
 }
 
 

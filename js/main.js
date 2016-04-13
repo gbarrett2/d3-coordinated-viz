@@ -322,14 +322,14 @@ var regions = d3.selectAll(".regions")
 //re-sort, resize, and recolor bars
 var bars = d3.selectAll(".bar")
 //re-sort bars
-.sort(function(a, b){
- return b[expressed] - a[expressed];
-})
-.transition() //add animation
-.delay(function(d, i){
- return i * 20
-})
-.duration(500);
+    .sort(function(a, b){
+    return b[expressed] - a[expressed];
+  })
+    .transition() //add animation
+    .delay(function(d, i){
+        return i * 20
+    })
+    .duration(500);
 
 updateChart(bars, csvData.length, colorScale);
 
