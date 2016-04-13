@@ -253,7 +253,6 @@ function setChart(csvData, colorScale){
         .attr("x", 40)
         .attr("y", 40)
         .attr("class", "chartTitle");
-      //.text("Number of Variable " + expressed[3] + " in each region");
 
     //create vertical axis generator
     var yAxis = d3.svg.axis()
@@ -355,8 +354,7 @@ updateChart(bars, csvData.length, colorScale);
               });
               //at the bottom of updateChart()...add text to chart title
               var chartTitle = d3.select(".chartTitle")
-                .text("Number of Variable " + expressed[3] + " in each region");
-
+                .text("Number of Variable " + expressed + " in each region");
               };
 
     function highlight(props){
@@ -415,27 +413,9 @@ function dehighlight(props){
         .remove();
 };
 
-// //function to create dynamic label
-// function setLabel(props){
-//     //label content
-//     var labelAttribute = "<h1>" + props[expressed] +
-//         "</h1><b>" + expressed + "</b>";
-//
-//     //create info label div
-//     var infolabel = d3.select("body")
-//         .append("div")
-//         .attr({
-//             "class": "infolabel",
-//             "id": props.state + "_label"
-//         })
-//         .html(labelAttribute);
-//
-//     var regionName = infolabel.append("div")
-//         .attr("class", "labelname")
-//         .html(props.state);
-// };
 
-//Example 2.8 line 1...function to move info label with mouse
+
+//function to move info label with mouse
 function moveLabel(){
     //get width of label
     var labelWidth = d3.select(".infolabel")
