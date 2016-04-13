@@ -61,7 +61,7 @@ function setMap(){
     var pageTitle = d3.select("body")
 		.append("text")
 		.attr("class", "pageTitle")
-		.html("Voting:<br> By State in 2008");
+		.html("Voting in the United States:<br> By State in 2008");
  	//create Albers equal area conic projection centered on France
  	var projection = d3.geo.albersUsa()
  	  .scale(800)
@@ -363,8 +363,8 @@ updateChart(bars, csvData.length, colorScale);
         //change stroke
         var selected = d3.selectAll("." + props.name)
             .style({
-                "stroke": "grey",
-                "stroke-width": "2"
+                "stroke": "darkgrey",
+                "stroke-width": "3"
             });
             setLabel(props);
     };
